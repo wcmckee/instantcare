@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instant Care</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="node_modules/vue/vue.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <h1>Instant Care</h1><br>
+    <h3>Leave a message</h3>
+    <p>Enter your name, username of addict, and a message.</p>
+    <form method="POST">
+        <fieldset>
+            friend name: <input type="text" name="friendname"><br>
+            username: <input type="text" name="username"><br>
+            message: <input type="text" name="message"><br>
+
+
+            <input type="submit" value="Submit"><br>
+            </fieldset>
+        </form></body>
+        
+
