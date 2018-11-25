@@ -3,7 +3,15 @@ import arrow
 
 
 timenow = arrow.now()
-def createdatabase(namedatabase):
+
+def createmsgdatabase(namedatabase):
+        #Creates a database with the table buttonpush. Give it the name of database.
+        conn = sqlite3.connect('{}.db'.format(namedatabase))
+        c = conn.cursor()
+        c.execute('''CREATE TABLE message
+                    (date text, friendname text, username text, message text)''')
+
+def createbuttondb(namedatabase):
         #Creates a database with the table buttonpush. Give it the name of database.
         conn = sqlite3.connect('{}.db'.format(namedatabase))
         c = conn.cursor()
@@ -44,6 +52,7 @@ def createdbtext(namedatabase):
     c.execute('''CREATE TABLE message
                     (date text, friendname text, username text, message text)''')
     
+
 def createtext(namedatabase, friendname, username, message):
     #creates a database entry from friend to username. Input friendname, their 
     #username, and the message. This is then saved in the database for when 
@@ -61,9 +70,9 @@ def createtext(namedatabase, friendname, username, message):
     conn.commit()
     conn.close()
     
-def readtext(namedatabase):
-    #This reads the database of messages. Give it name of database.
-    conn = sqlite3.connect('{}.db'.format(namedatabase))
+def readtext():
+    #This reads the database of messages. Give it name of user to lookup.
+    conn = sqlite3.connect('default.db')
     c = conn.cursor()
 
     c.execute('SELECT * FROM message')
